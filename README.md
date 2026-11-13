@@ -29,7 +29,35 @@ It is built on [Claude Code Game Studios](https://github.com/Donchitos/Claude-Co
    - Codex: `$studio-prototype an isometric village builder, tap to place buildings`
 4. Play it, ask for changes in plain words, then run `/next-step` (or `$studio-next-step`).
 
-## Requirements
+## Next useful commands
+
+Every command works in both assistants: `/name` in Claude Code, `$studio-name`
+in Codex. Not sure where you are? Run `next-step`; it names the one thing to do.
+
+| When | Claude Code | Codex |
+|---|---|---|
+| Right after cloning (once) | `/start` | `$studio-start` |
+| Have an idea, want a playable build | `/prototype <one-line pitch>` | `$studio-prototype <pitch>` |
+| No idea yet | `/brainstorm` | `$studio-brainstorm` |
+| After every play session | `/next-step` | `$studio-next-step` |
+| Build a story or feature | `/dev-story` | `$studio-dev-story` |
+| Lock a consistent visual style | `/art-bible` | `$studio-art-bible` |
+| Review code you just wrote | `/code-review` | `$studio-code-review` |
+| Before sharing a build | `/smoke-check` | `$studio-smoke-check` |
+| Scope is growing | `/scope-check`, `/cut` | `$studio-scope-check`, `$studio-cut` |
+| Change a setting (engine, process level, commands) | `/project-settings` | `$studio-project-settings` |
+| Lost track of project state | `/project-stage-detect` | `$studio-project-stage-detect` |
+| Move to a new engine version | `/setup-engine godot <version>` | `$studio-setup-engine godot <version>` |
+| Ready to ship | `/release-checklist` | `$studio-release-checklist` |
+
+A typical first week:
+
+1. Follow [`TEMPLATE.md`](TEMPLATE.md): name the game, install gdUnit4, add export presets.
+2. `start` → `prototype` → play → ask for changes in plain words.
+3. `next-step` after each session; `smoke-check` before you share a build.
+4. When the game needs more structure, raise the process level with
+   `project-settings`, then use `gate-check` to see if you're ready for the next stage.
+
 
 - [Godot](https://godotengine.org/) 4.7.2 on your `PATH` (`godot --version`)
 - Claude Code and/or Codex
