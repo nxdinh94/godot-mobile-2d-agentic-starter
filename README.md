@@ -1,7 +1,8 @@
 # Godot Mobile 2D Agentic Starter
 
-A ready-to-clone starting point for building a **2D mobile game (Android + iOS)
-in Godot 4.7 with GDScript**, driven by an AI coding agent. It works with both
+A ready-to-clone starting point for building an **isometric 2D simulation game
+for mobile (Android + iOS) in Godot 4.7 with GDScript**, driven by an AI coding
+agent: village builders, tycoons, farm and city sims. It works with both
 **Claude Code** and **Codex** and shares one config, one set of workflows and one
 set of design records between them.
 
@@ -27,7 +28,41 @@ It is built on [Claude Code Game Studios](https://github.com/Donchitos/Claude-Co
 3. Open your agent in the repo root and describe the game in one line:
    - Claude Code: `/prototype an isometric village builder, tap to place buildings`
    - Codex: `$studio-prototype an isometric village builder, tap to place buildings`
+   - More pitch ideas and the decisions to settle first: see
+     [Built for isometric simulation games](#built-for-isometric-simulation-games).
 4. Play it, ask for changes in plain words, then run `/next-step` (or `$studio-next-step`).
+
+## Built for isometric simulation games
+
+The starter is tuned for a tap-driven, isometric, build-and-manage sim: a 2D
+world drawn at an angle, a grid of tiles, placeable buildings, resources that
+change over time, and a touch-only UI on a phone screen.
+
+The engine side is already decided: Godot 4.7.2, GDScript, the Mobile renderer,
+Godot Physics 2D, touch input, and a 60fps budget. What the **game** needs is
+not, so settle these in your first `prototype` session and record them in
+`design/game-brief.md` (or `design/` docs at a higher process level):
+
+| Decision | Why it matters |
+|---|---|
+| Tile size and grid shape (e.g. 2:1 diamond) | Every sprite, the camera and placement all depend on it |
+| Camera: fixed, pan, pinch-zoom, bounds | The main touch interaction in a sim |
+| Placement and selection by touch | Tap, drag to place, confirm and cancel, without hover |
+| Draw order (depth sorting) | Buildings and characters must overlap correctly |
+| Simulation clock | Real-time, tick-based or paused-when-closed; sets how it runs offline |
+| Resources and balance data | Keep numbers in data files, not in code (project rule) |
+| Save and load | A sim is only fun if the town persists, including app suspend |
+| Screen orientation and safe areas | Portrait or landscape, and notches on phones |
+
+Check `docs/engine-reference/godot/` before using engine APIs for tilemaps,
+cameras or input; agents are told to do the same. This README gives no API
+recipes for them, because Godot 4.5 to 4.7 changed things the model may not know.
+
+Useful pitches to paste into `prototype`:
+
+- `an isometric village builder, tap to place houses and farms, villagers produce resources over time`
+- `a cozy isometric farm sim for phones, plant and harvest on a tile grid, pinch to zoom`
+- `an isometric tycoon, place shops on a grid, customers arrive on a timer, upgrade to earn more`
 
 ## Next useful commands
 
