@@ -1,0 +1,11 @@
+config_version=5
+
+[application]
+
+config/name="my-game"
+; run/main_scene is left unset: no scene exists yet. /dev-story or the user sets it once one does.
+config/features=PackedStringArray("4.7", "Mobile")
+
+[rendering]
+
+renderer/rendering_method="mobile"

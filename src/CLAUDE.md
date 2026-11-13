@@ -1,0 +1,3 @@
+# src instructions
+
+@AGENTS.md

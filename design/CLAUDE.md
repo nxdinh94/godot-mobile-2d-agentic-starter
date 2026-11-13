@@ -1,0 +1,3 @@
+# design instructions
+
+@AGENTS.md

@@ -1,0 +1,3 @@
+# docs instructions
+
+@AGENTS.md
