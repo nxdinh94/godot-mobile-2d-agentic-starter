@@ -50,7 +50,7 @@ naming:
 commands:
   # build: no export presets exist yet. Set it via /project-settings once
   # Android and iOS presets exist, e.g. godot --headless --export-debug '<PRESET>'
-  build: "[TO BE CONFIGURED]"
+  build: "godot --headless --export-debug \"Android Debug\" build/my-game-debug.apk"
   test: "godot --headless -s -d --remote-debug tcp://127.0.0.1:0 res://addons/gdUnit4/bin/GdUnitCmdTool.gd -a res://tests --ignoreHeadlessMode"
   run: "godot --path . --windowed --resolution 1280x720"
   smoke: "godot --headless --quit-after 5"
